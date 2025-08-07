@@ -6,7 +6,7 @@ import { flattenObject } from "../utils/helpers";
 export default function FilterAction(props) {
     const { initialMetadata, onFilterChange, filterData} = props;
     const [conditions, setConditions] = useState(filterData || []);
-    const conditonArray = ["EQUALS", "GREATER_THAN", "LESS_THAN", "CONTAINS", "NOT_EQUAL"]
+    const conditonArray = ["EQUALS", "GREATER_THAN", "LESS_THAN", "CONTAINS", "NOT_EQUALS"]
 
     const handleConditionChange = (index, fieldName, value) => {
         const newCondition = conditions.map((condn,idx)=> (idx==index ? {...condn, [fieldName]:value}:condn));
