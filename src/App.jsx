@@ -1,6 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from '@vercel/analytics/react';
 import Header from "./components/header";
 import ProtectedRoute from "./context/protectedRoute";
 import CreateZap from "./pages/createzap";
@@ -14,7 +14,7 @@ export default function App() {
 
   return (
     <Router>
-      <Analytics/>
+     
       <Header  />
       <main>
         <Routes>
@@ -27,6 +27,8 @@ export default function App() {
           <Route path="/zaps/history/:zapId" element={<ProtectedRoute><History /></ProtectedRoute>} />
         </Routes>
       </main>
+      <Analytics/>
     </Router>
+     
   );
 }
