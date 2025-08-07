@@ -1,5 +1,6 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
+import { Analytics } from "@vercel/analytics/next";
 import Header from "./components/header";
 import ProtectedRoute from "./context/protectedRoute";
 import CreateZap from "./pages/createzap";
@@ -8,12 +9,12 @@ import History from "./pages/history";
 import Landing from "./pages/landing";
 import Signin from "./pages/signin";
 import Signup from "./pages/signup";
-
 export default function App() {
 
 
   return (
     <Router>
+      <Analytics/>
       <Header  />
       <main>
         <Routes>
